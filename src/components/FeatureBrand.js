@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./css/FeatureBrand.css";
+import "../css/FeatureBrand.css";
 import { faGreaterThan, faLessThan } from "@fortawesome/free-solid-svg-icons";
 
 function FeatureBrand({ cards }) {

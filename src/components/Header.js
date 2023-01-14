@@ -20,42 +20,54 @@ function Header() {
     {
       label: "My Profile",
       icon: faUser,
+      path: "/account/",
     },
     {
       label: "Flipkart Plus Zone",
       icon: faPlus,
+      path: "/account/pluszone",
     },
     {
       label: "SuperCoin Zone",
       icon: faCoins,
+      path: "/account/supercoin",
     },
     {
       label: "Orders",
       icon: faBagShopping,
+      path: "/account/orders",
     },
     {
       label: "Wishlist",
       icon: faList,
+      path: "/account/wishlist",
     },
     {
       label: "Coupons",
       icon: faTicket,
+      path: "/account/coupons",
     },
     {
       label: "Gift Cards",
       icon: faGift,
+      path: "/account/giftcard",
     },
     {
       label: "Notifications",
       icon: faBell,
+      path: "/account/notifications",
     },
     {
       label: "Logout",
       icon: faRightFromBracket,
+      path: "/account/logout",
     },
   ];
   return (
-    <nav style={{position:'fit'}} className="navbar  navbar-expand-lg navbar-dark bg-primary">
+    <nav
+      style={{ position: "fit" }}
+      className="navbar  navbar-expand-lg navbar-dark bg-primary"
+    >
       <div className="container-fluid">
         <img src={logo} className="img-fluid" width={50} alt="flipkart-logo" />
 
@@ -90,9 +102,10 @@ function Header() {
                   return (
                     <li className="d-flex align-items-center  border-bottom dropdown-item">
                       <FontAwesomeIcon icon={item.icon} />
-                      <a className="dropdown-item" href="#">
+
+                      <Link className="dropdown-item" to={item.path}>
                         {item.label}
-                      </a>
+                      </Link>
                     </li>
                   );
                 })}
