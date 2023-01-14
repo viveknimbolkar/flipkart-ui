@@ -59,7 +59,7 @@ function AccountSideMenu() {
   ];
 
   return (
-    <div className="row mt-4">
+    <div className="row">
       <div className="col-md-12 d-flex  py-2 flipkart-menu-shadow bg-white border mb-4 lh-sm">
         <img src={userLogo} alt="user image" />
         <div className="flipkart-user-container">
