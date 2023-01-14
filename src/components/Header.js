@@ -61,8 +61,8 @@ function Header() {
 
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className=" navbar-nav align-items-center w-100 justify-content-around text-light">
-            <li className="nav-item">
-              <div class="input-group w-100">
+            <li className="nav-item w-50">
+              <div class="input-group ">
                 <input
                   type="text"
                   class="form-control"
