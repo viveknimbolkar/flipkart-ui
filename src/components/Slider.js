@@ -3,13 +3,18 @@ function Slider({ images }) {
   return (
     <div id="carouselExampleFade" class="carousel slide carousel-fade">
       <div class="carousel-inner">
-        {images.map((image) => {
-          return (
-            <div class="carousel-item active">
-              <img src={image} class="d-block w-100" alt="..." />
-            </div>
-          );
-        })}
+        {images &&
+          images.map((image, i) => {
+            return (
+              <div class="carousel-item active">
+                <img
+                  src={image}
+                  class="d-block w-100"
+                  alt={`slider image ${i}`}
+                />
+              </div>
+            );
+          })}
       </div>
       <button
         class="carousel-control-prev"

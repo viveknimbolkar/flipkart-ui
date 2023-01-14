@@ -1,0 +1,9 @@
+.flipkart-feature-brand-container{
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 320px;
+}
+.flipkart-feature-brand-image-container img{
+    width: 300px;
+    
+}
