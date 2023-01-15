@@ -68,7 +68,10 @@ function AccountSideMenu() {
         </div>
       </div>
       <div className="col-md-12 flipkart-menu-shadow bg-white p-3 fs-5 border">
-        <Link to="/orders" className="text-decoration-none fw-bold text-dark">
+        <Link
+          to="/account/orders"
+          className="text-decoration-none fw-bold text-dark"
+        >
           <FontAwesomeIcon icon={faCartPlus} className="mx-3" />
           My Orders
         </Link>

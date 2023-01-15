@@ -1,0 +1,31 @@
+function getDeliveryContent(
+    deliveryStatus,
+    deliverOn,
+    deliveredOn,
+    rateLink
+  ) {
+    switch (deliveryStatus) {
+      case "delivered":
+        return (
+          <div>
+            <FontAwesomeIcon icon={faCircle} className="text-success mx-2" />
+            Delivered on {deliveredOn}
+            <p>Your item has been delivered</p>
+            <FontAwesomeIcon icon={faStar} className="text-primary mx-2" />
+            <Link to={rateLink}>Rate & Review product</Link>
+          </div>
+        );
+
+      case "transition" || "book":
+        return (
+          <div>
+            <FontAwesomeIcon
+              icon={faCircleNotch}
+              className="text-warning mx-2"
+            />
+            Delivery on {deliverOn}
+            <p>Your item will be deliver on {deliverOn}</p>
+          </div>
+        );
+    }
+  }

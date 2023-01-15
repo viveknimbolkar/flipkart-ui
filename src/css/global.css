@@ -1,7 +1,14 @@
-.theme-pointer-cursor{
-    cursor: pointer;
+.theme-pointer-cursor {
+  cursor: pointer;
 }
 
-.theme-font-size{
-    font-size: 14px;
+.theme-font-size {
+  font-size: 14px;
+}
+
+.theme-menu-boxshadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.theme-menu-boxshadow-hover:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }

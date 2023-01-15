@@ -43,6 +43,32 @@ const initialState = {
       link: "/account",
     },
   ],
+  orderFilters: {
+    status: ["on the way", "delivered", "cancelled", "returned"],
+    time: ["last 30 days", "2022", "2021", "2020", "2019", "older"],
+  },
+  orders: [
+    {
+      productImg: "",
+      details: "this is product details",
+      color: "black",
+      price: "3445",
+      deliveryStatus: "book",
+      rateLink: "/",
+      deliveryOn: "12 jan 2023",
+      deliveredOn: "",
+    },
+    {
+      productImg: "",
+      details: "this is product details",
+      color: "black",
+      price: "3445",
+      deliveryStatus: "book",
+      rateLink: "/",
+      deliveryOn: "12 jan 2023",
+      deliveredOn: "",
+    },
+  ],
 };
 
 // create context
@@ -73,6 +99,8 @@ function GlobalProvider({ children }) {
       value={{
         address: state.address,
         notification: state.notification,
+        orderFilters: state.orderFilters,
+        orders: state.orders,
         addNewAddress,
         removeAddress,
       }}
