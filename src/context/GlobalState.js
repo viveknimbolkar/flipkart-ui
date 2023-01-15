@@ -27,6 +27,22 @@ const initialState = {
       addressType: "Home",
     },
   ],
+  notification: [
+    {
+      image: "",
+      details:
+        'Comes with 6.51" HD+ Display, 6000 mAH Battery & many more exciting features.',
+      date: "14 Jan, 2023",
+      link: "/",
+    },
+    {
+      image: "",
+      details:
+        'Comes with 6.51" HD+ Display, 6000 mAH Battery & many more exciting features.',
+      date: "14 Jan, 2023",
+      link: "/account",
+    },
+  ],
 };
 
 // create context
@@ -54,7 +70,12 @@ function GlobalProvider({ children }) {
 
   return (
     <GlobalContext.Provider
-      value={{ address: state.address, addNewAddress, removeAddress }}
+      value={{
+        address: state.address,
+        notification: state.notification,
+        addNewAddress,
+        removeAddress,
+      }}
     >
       {children}
     </GlobalContext.Provider>
