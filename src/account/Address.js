@@ -39,39 +39,7 @@ function Address() {
     console.log(addNewAddressIsVisible);
   }
 
-  // const addressList = [
-  //   {
-  //     name: "Vivek Nimbolkar",
-  //     mobile: "1234567891",
-  //     address: "Durga Chaulk, Near Z.p. School",
-  //     pincode: "444204",
-  //     city: "Tunki Bk.",
-  //     landmark: "landmark",
-  //     state: "maharashtra",
-  //     alternateMobile: "1234567891",
-  //   },
-  //   {
-  //     name: "Vivek ",
-  //     mobile: "1234567891",
-  //     address: "Durga Chaulk, Near Z.p. School",
-  //     pincode: "444204",
-  //     city: "Tunki Bk.",
-  //     landmark: "landmark",
-  //     state: "maharashtra",
-  //     alternateMobile: "1234567891",
-  //   },
 
-  //   {
-  //     name: " Nimbolkar",
-  //     mobile: "1234567891",
-  //     address: "Durga Chaulk, Near Z.p. School",
-  //     pincode: "444204",
-  //     city: "Tunki Bk.",
-  //     landmark: "landmark",
-  //     state: "maharashtra",
-  //     alternateMobile: "1234567891",
-  //   },
-  // ];
   return (
     <>
       <Header />

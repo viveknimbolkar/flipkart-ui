@@ -38,7 +38,6 @@ function GlobalProvider({ children }) {
 
   // add new address
   function addNewAddress(newAddress) {
-    console.log(newAddress);
     dispatch({
       payload: newAddress,
       type: "ADD_NEW_ADDRESS",
