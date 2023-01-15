@@ -69,8 +69,14 @@ function Header() {
       className="navbar  navbar-expand-lg navbar-dark bg-primary"
     >
       <div className="container-fluid">
-        <img src={logo} className="img-fluid" width={50} alt="flipkart-logo" />
-
+        <Link to="/">
+          <img
+            src={logo}
+            className="img-fluid"
+            width={50}
+            alt="flipkart-logo"
+          />
+        </Link>
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className=" navbar-nav align-items-center w-100 justify-content-around text-light">
             <li className="nav-item w-50">
