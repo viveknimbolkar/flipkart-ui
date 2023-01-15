@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import userLogo from "../assets/user.svg";
 import React from "react";
-import "../css/AccountSideMenu.css";
+import "../css/account-side-menu.css";
 import { Link } from "react-router-dom";
 function AccountSideMenu() {
   const accountSettings = [
