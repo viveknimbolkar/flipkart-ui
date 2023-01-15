@@ -9,7 +9,6 @@ import { GlobalContext } from "../context/GlobalState";
 import { generateId } from "./helper";
 function Address() {
   const context = useContext(GlobalContext);
-  console.log(context);
   const [addNewAddressIsVisible, setAddNewAddressIsVisible] = useState(false);
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");

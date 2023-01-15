@@ -13,6 +13,7 @@ import Notifications from "./account/Notifications";
 import Pancard from "./account/Pancard";
 import Address from "./account/Address";
 import GlobalProvider from "./context/GlobalState";
+import SavedUPI from "./account/SavedUPI";
 function App() {
   return (
     <GlobalProvider>
@@ -25,6 +26,7 @@ function App() {
         <Route path="/account/logout" element={<Logout />} />
         <Route path="/account/orders" element={<Orders />} />
         <Route path="/account/pluszone" element={<PlusZone />} />
+        <Route path="/account/vpadetails" element={<SavedUPI />} />
         <Route path="/account/supercoin" element={<Supercoin />} />
         <Route path="/account/wishlist" element={<Wishlist />} />
         <Route path="/account/notifications" element={<Notifications />} />

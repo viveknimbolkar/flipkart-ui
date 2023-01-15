@@ -42,7 +42,7 @@ function AccountSideMenu() {
   const myStuff = [
     {
       label: "My Coupons",
-      path: "/account/rewards",
+      path: "/account/coupons",
     },
     {
       label: "My Reviews & Ratings",
