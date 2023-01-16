@@ -1,0 +1,17 @@
+.product-details:hover {
+  color: rgb(0, 47, 255);
+}
+.product-details {
+  line-height: 15px;
+}
+.product-rating {
+  width: fit-content;
+  font-size: 11px;
+  border-radius: 3px;
+}
+.product-rating {
+  padding: 2px;
+}
+.product-boxshadow:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

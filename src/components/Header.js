@@ -88,9 +88,15 @@ function Header() {
                   aria-label="Recipient's username"
                   aria-describedby="button-addon2"
                 />
-                <button class="btn btn-light" type="button" id="button-addon2">
-                  <FontAwesomeIcon icon={faMagnifyingGlass} />
-                </button>
+                <Link to="/search">
+                  <button
+                    class="btn btn-light"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                  </button>
+                </Link>
               </div>
             </li>
             <li className="nav-item dropdown fw-bold">

@@ -1,5 +1,14 @@
 import React, { createContext, useContext, useReducer } from "react";
 import AppReducer from "./AppReducer";
+
+import laptopImg1 from "../assets/laptop-1.webp";
+import laptopImg2 from "../assets/laptop-2.webp";
+import laptopImg3 from "../assets/laptop-3.webp";
+import laptopImg4 from "../assets/laptop-4.webp";
+import laptopImg5 from "../assets/laptop-5.webp";
+import laptopImg6 from "../assets/laptop-6.webp";
+import laptopImg7 from "../assets/laptop-7.webp";
+
 const initialState = {
   address: [
     {
@@ -69,6 +78,17 @@ const initialState = {
       deliveredOn: "",
     },
   ],
+  product: {
+    images: [
+      laptopImg1,
+      laptopImg2,
+      laptopImg3,
+      laptopImg4,
+      laptopImg5,
+      laptopImg6,
+      laptopImg7,
+    ],
+  },
 };
 
 // create context
@@ -101,6 +121,7 @@ function GlobalProvider({ children }) {
         notification: state.notification,
         orderFilters: state.orderFilters,
         orders: state.orders,
+        product: state.product,
         addNewAddress,
         removeAddress,
       }}

@@ -14,12 +14,15 @@ import Pancard from "./account/Pancard";
 import Address from "./account/Address";
 import GlobalProvider from "./context/GlobalState";
 import SavedUPI from "./account/SavedUPI";
+import Search from "./pages/Search";
+import Product from "./pages/Product";
 function App() {
   return (
     <GlobalProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/product" element={<Product />} />
         <Route path="/account/address" element={<Address />} />
         <Route path="/account/coupons" element={<Coupons />} />
         <Route path="/account/giftcard" element={<GiftCard />} />
@@ -30,7 +33,8 @@ function App() {
         <Route path="/account/supercoin" element={<Supercoin />} />
         <Route path="/account/wishlist" element={<Wishlist />} />
         <Route path="/account/notifications" element={<Notifications />} />
-        <Route path="/account/pancard" element={<Pancard />} />
+        <Route path="/account/giftcard" element={<GiftCard />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </GlobalProvider>
   );
