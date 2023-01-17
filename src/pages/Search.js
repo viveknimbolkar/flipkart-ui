@@ -4,11 +4,11 @@ import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
 import SearchFilter from "../components/SearchFilter";
 const productDetails = {
-  details: "details ssssssssssssssssssssssssssssssssssssssssssssssssss",
+  details: "details sssssssssss ssssssssssssssss ssssssssssss sssssssssss",
   quantity: "45ml",
   rating: "4.7",
-  price: "3,672",
-  originalPrice: "7,342",
+  price: "3672",
+  originalPrice: "7342",
   discount: "34",
   deliveryCharges: "free delivery",
   link: "/account",
@@ -47,9 +47,9 @@ function Search() {
   const [activeTab, setActiveTab] = useState(1);
 
   function getActiveTab() {
-    if (activeTab == 1) {
+    if (activeTab === 1) {
       return <SortByPopularity />;
-    } else if (activeTab == 2) {
+    } else if (activeTab === 2) {
       return <SortByLowToHigh />;
     } else {
       return <SortByHighToLow />;
@@ -76,6 +76,7 @@ function Search() {
                 <li class="nav-item nav-link text-dark">Sort By</li>
                 <li class="nav-item">
                   <a
+                  href="#"
                     onClick={() => setActiveTab(1)}
                     class="nav-link theme-pointer-cursor"
                     aria-current="page"

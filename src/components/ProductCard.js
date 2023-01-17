@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import userImg from "../assets/user.svg";
 import "../css/product-card.css";
 function ProductCard({ productDetails }) {
+  
   var inFormatPrice = productDetails.price.toLocaleString("hi-IN");
   var inFormatOriginalPrice =
     productDetails.originalPrice.toLocaleString("hi-IN");
@@ -35,9 +36,7 @@ function ProductCard({ productDetails }) {
                 {productDetails.rating} <FontAwesomeIcon icon={faStar} />
               </div>
 
-              <div class="dropdown-menu">
-               googel
-              </div>
+              <div class="dropdown-menu">googel</div>
             </div>
             <p className="mx-2 text-secondary">({inFormatPurchases})</p>
             <div>

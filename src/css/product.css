@@ -1,15 +1,25 @@
 .product-img-tab-container img {
   width: 100px;
 }
-
 .product-img-tab-container {
-    
   max-height: 300px;
   overflow-y: scroll;
   max-width: 100px;
   overflow-x: hidden;
 }
-.product-img img{
-    max-width: 400px;
-    max-height: 400px;
+.product-img img {
+  max-width: 400px;
+  max-height: 400px;
+}
+.product-delivery-pincode {
+  border: none;
+  border-bottom: 1px solid #0d6efd;
+  outline: none;
+}
+.proudct-address-item {
+  max-width: 250px;
+  overflow: hidden;
+}
+.product-order-before {
+  font-size: 12px;
 }
