@@ -8,6 +8,9 @@ import laptopImg4 from "../assets/laptop-4.webp";
 import laptopImg5 from "../assets/laptop-5.webp";
 import laptopImg6 from "../assets/laptop-6.webp";
 import laptopImg7 from "../assets/laptop-7.webp";
+import laptop from "../assets/hp-laptop.webp";
+import mouse from "../assets/mouse.webp";
+import bag from "../assets/bag.webp";
 
 const initialState = {
   address: [
@@ -79,6 +82,62 @@ const initialState = {
     },
   ],
   product: {
+    sellerInfo: {
+      name: "IndiflashMart",
+      rating: "4.3",
+    },
+    easyPaymentOptions: [
+      "No cost EMI starting from ₹8,332/month",
+      "Cash on Delivery",
+      "Net banking & Credit/ Debit ATM card",
+    ],
+
+    importantNote:
+      "The Windows 11 Upgrade rollout plan is scheduled to begin in late 2021 and will continue into 2022. The specific timing will vary as per the device.",
+    highlights: [
+      "NVIDIA GeForce GTX 1650",
+      "15.6 inch Full HD WLED-Backlit IPS Anti-glare Micro-edge Display (Brightness: 250 nits, 141 PPI, Color Gamut: 45% NTSC) ",
+      "Light Laptop without Optical Disk Drive",
+      "Pre-installed Genuine Windows 10 OS ",
+    ],
+    exchange: {
+      withPrice: "33,990",
+      withoutPrice: "12,000 ",
+    },
+    offers: [
+      {
+        by: "Bank Offer",
+        details:
+          "10% off on Citi Credit Card and EMI Transactions, up to ₹1,500. On orders of ₹5,000 and above",
+        termsAndConditions: [],
+      },
+      {
+        by: "Bank Offer",
+        details:
+          "10% off on Citi Credit Card and EMI Transactions, up to ₹1,500. On orders of ₹5,000 and above",
+        termsAndConditions: [],
+      },
+      {
+        by: "Bank Offer",
+        details:
+          "10% off on Citi Credit Card and EMI Transactions, up to ₹1,500. On orders of ₹5,000 and above",
+        termsAndConditions: [],
+      },
+      {
+        by: "Bank Offer",
+        details:
+          "10% off on Citi Credit Card and EMI Transactions, up to ₹1,500. On orders of ₹5,000 and above",
+        termsAndConditions: [],
+      },
+    ],
+    purchases: "456893",
+    rating: "2.4",
+    percentOff: "26",
+    originalPrice: "45990",
+    price: "33990",
+    discount: "2000",
+    details:
+      "HP 14s Intel Core i3 11th Gen - (8 GB 256 GB SSD/Windows 11Home) 14s - dy2507TU Thin and Light Laptop (14 inch, Natural Silver, 1.41 Kg, With MS Office)",
     images: [
       laptopImg1,
       laptopImg2,
@@ -88,7 +147,141 @@ const initialState = {
       laptopImg6,
       laptopImg7,
     ],
+    specifications: {
+      general: {
+        salesPackage: [
+          "Laptop",
+          "Power Adaptor",
+          "User Guide",
+          "Warranty Documents",
+        ],
+        modelNumber: "15-ec2004AX",
+        partNumber: "3E3R5PA",
+        series: "Pavilion",
+        color: "Shadow Black",
+        type: "Gaming Laptop",
+        suitableFor: "Gaming",
+        batteryCell: "3 cell",
+        msOfficeProvided: "no",
+      },
+      processorAndMemoryFeatures: {
+        dedicatedGraphicMemoryType: "GDDR6",
+        dedicatedGraphicMemoryCapacity: "4 GB",
+        processorBrand: "AMD",
+        ProcessorName: "Ryzen 5 Hexa Core",
+        SSD: "Yes",
+        SSDCapacity: "512 GB",
+        RAM: "8 GB ",
+        RAMType: "DDR4",
+        processorVariant: "AMD R5-5600H",
+        clockSpeed: "3.3 GHz with Turbo Boost Upto 4.2 GHz",
+        expandableMemory: "Upto 16 GB ",
+        RAMFrequency: "3200 MHz",
+        cache: "16MB",
+        graphicProcessor: "NVIDIA GeForce GTX 1650",
+        numberOfCores: "6",
+      },
+      operatingSystem: {
+        OSArchitecture: "64 bit",
+        operatingSystem: "Windows 10 ",
+        systemArchitecture: "64 bit ",
+      },
+      portAndSlotFeatures: {
+        micIn: "Yes",
+        RJ45: "Yes",
+        USBPort: [
+          " 1 x SuperSpeed USB Type-C (5Gbps Signaling Rate)",
+          "1 x SuperSpeed USB Type-A (5Gbps Signaling Rate)",
+          "1 x USB 2.0 Type-A (HP Sleep and Charge)",
+        ],
+        HDMIPort: "1 x HDMI 2.0",
+        multiCardSlot: "3-in-1 Card Reader (SD, SDHC, SDxC",
+        hardwareInterface: "PCIe NVMe M.2",
+      },
+      displayAndAudioFeatures: {
+        touchscreen: "No",
+        screenSize: "39.62 cm (15.6 inch)",
+        screenResolution: "1920 x 1080 Pixel",
+        screenType: [
+          "Full HD WLED-Backlit IPS Anti-glare Micro-edge Display (Brightness: 250 nits, 141 PPI",
+          "Color Gamut: 45% NTSC)",
+        ],
+        speakers: "Built-in Dual Speakers",
+        internalMic: "Integrated Dual Array Digital Microphone",
+        soundProperties: ["Audio by Bang & Olufsen", "Dual Speakers"],
+        refreshRate: "144 Hz",
+      },
+      connectivityFeatures: {
+        wirelessLAN: "RTL8822CE 802.11a/b/g/n/ac (2x2)",
+        bluetooth: "v5.0",
+        ethernet: "10/100/1000 GbE LAN",
+      },
+      dimensions: {
+        dimensions: "360 x 257 x 23.5 mm",
+        weight: "1.98 kg",
+      },
+      additionalFeatures: {
+        diskDrive: "Not Available",
+        webCamera: "HP TrueVision HD Webcam",
+        fingerPrintSensor: "No",
+        keyboard: [
+          "Full-size",
+          "Ultra Violet Backlit",
+          "Shadow Black Keyboard with Numeric Keypad",
+        ],
+        backlitKeyboard: "Yes",
+        pointerDevice: "HP Imagepad with Multi-Touch Gesture Support",
+        includedSoftware: [
+          "HP Documentation",
+          "HP e-service",
+          " HP BIOS Recovery",
+          "HP SSRM, HP Smart",
+          "HP Jumpstarts",
+        ],
+        additionalFeatures: "52.5Wh Li-ion Polymer Battery",
+      },
+      warranty: {
+        warrantySummary: "1 Year Onsite Warranty",
+        warrantyServiceType: "Onsite",
+        coveredInnWarranty: "Manufacturing Defects",
+        notCoveredInWarranty: "Physical Damage",
+        domesticWarranty: "1 Year",
+      },
+    },
   },
+  deliveryInfo: {
+    pincode: "444562",
+    day: "sunday",
+    date: "21",
+    month: "Jan",
+    charges: "40",
+    orderBeforTime: "10:34",
+  },
+  // this obj only contains two objects
+  frequentlyBoughtTogether: [
+    {
+      link: "/account",
+      image: mouse,
+      details:
+        "HP Pavilion Ryzen 5 Hexa Core AMD R5-5600H - (8 GB/512 GB SSD/Windows",
+      rating: "4.4",
+      purchases: "11507",
+      originalPrice: "63539",
+      price: "899",
+      discount: "21",
+    },
+    {
+      link: "/account",
+      image: bag,
+      details:
+        "HP Pavilion Ryzen 5 Hexa Core AMD R5-5600H - (8 GB/512 GB SSD/Windows",
+      rating: "4.4",
+      purchases: "11507",
+      originalPrice: "63539",
+      price: "499",
+      discount: "21",
+    },
+  ],
 };
 
 // create context
@@ -122,6 +315,8 @@ function GlobalProvider({ children }) {
         orderFilters: state.orderFilters,
         orders: state.orders,
         product: state.product,
+        deliveryInfo: state.deliveryInfo,
+        frequentlyBoughtTogether: state.frequentlyBoughtTogether,
         addNewAddress,
         removeAddress,
       }}

@@ -23,3 +23,13 @@
 .product-order-before {
   font-size: 12px;
 }
+.product-addcart-btn{
+  height: 50px;
+  border: none;
+}
+.product-items-calculation{
+  min-height: 80px;
+}
+.product-table tr td{
+  border: none;
+}
