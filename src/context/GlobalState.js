@@ -82,6 +82,60 @@ const initialState = {
     },
   ],
   product: {
+    reviewDetails: [
+      {
+        author: "Rama Pandit",
+        rating: "3.6",
+        longComment:
+          "this is the best laptop with this price segment, Design : 5 Performance: 5 Battery:. 3",
+        shortComment: "Pretty good",
+        date: "Oct, 2022",
+        images: [
+          laptopImg1,
+          laptopImg2,
+          laptopImg3,
+          laptopImg4,
+          laptopImg5,
+          laptopImg6,
+          laptopImg7,
+        ],
+      },
+      {
+        author: "Rama Pandit",
+        rating: "3.6",
+        longComment:
+          "this is the best laptop with this price segment, Design : 5 Performance: 5 Battery:. 3",
+        shortComment: "Pretty good",
+        date: "Oct, 2022",
+        images: [
+          laptopImg1,
+          laptopImg2,
+          laptopImg3,
+          laptopImg4,
+          laptopImg5,
+          laptopImg6,
+          laptopImg7,
+        ],
+      },
+    ],
+    ratingAndReviews: {
+      starRatings: {
+        fiveStar: "4678",
+        fourStar: "3434",
+        threeStar: "2301",
+        twoStar: "1503",
+        oneStar: "10",
+      },
+      totalRating: "123456",
+      reviews: "5667",
+      average: {
+        performance: "4.3",
+        battery: "3.5",
+        design: "4.3",
+        display: "2.5",
+      },
+    },
+
     sellerInfo: {
       name: "IndiflashMart",
       rating: "4.3",

@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faIndianRupee,
   faTag,
+  faStar,
   faShoppingCart,
   faPlus,
   faLocationDot,
@@ -21,6 +22,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import SellerRatingPill from "../components/SellerRatingPill";
 import FrequentlyBoughtTogether from "../components/FrequentlyBoughtTogether";
+import TotalRatingProgressBar from "../components/TotalRatingProgressBar";
 
 function DeliveryDetails(props) {
   return (
@@ -85,10 +87,12 @@ function Product() {
     useContext(GlobalContext);
   const [activeImg, setActiveImg] = useState(0);
   const [modal, setModal] = useState(false);
+  const [reviewModal, setReviewModal] = useState(false);
   const [expandSpecificationTable, setExpandSpecificationTable] =
     useState(false);
   const [protectionChecked, setProtectionChecked] = useState(true);
 
+  document.title = product.details;
   function GetArrayTableRow({ label, values }) {
     return (
       <tr>
@@ -681,6 +685,46 @@ function Product() {
     );
   }
 
+  // TODO: create inner modal to open details of specific img onclick
+  function ReviewImagesModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="k"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            User Images
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="row review-image-modal-container">
+            {product.reviewDetails.map((reviews, i) => {
+              return (
+                <div className="d-flex gap-2 flex-wrap">
+                  {reviews.images.map((image, j) => {
+                    return (
+                      <img
+                        // onClick={() => openDetailsOfImage(i, j)}
+                        src={image}
+                      />
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+        </Modal.Body>
+      </Modal>
+    );
+  }
+
+  function openMoreReviewsModal() {
+    console.log("opened");
+  }
+
   return (
     <div>
       <Header />
@@ -1052,6 +1096,60 @@ function Product() {
                     purchases: product.purchases,
                   }}
                   additionalItems={frequentlyBoughtTogether}
+                />
+              </div>
+              <div className="my-4 border">
+                <div className="p-3">
+                  <h3>Ratings & Reviews</h3>
+                </div>
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="row p-2">
+                      <div className="col-md-4 d-flex align-items-center">
+                        <div>
+                          <div className="d-flex theme-font-size justify-content-center align-items-center">
+                            <h1>4.4</h1>
+                            <FontAwesomeIcon size="xl" icon={faStar} />
+                          </div>
+                          <span className="theme-font-size">
+                            11,507 Ratings & 1,175 Reviews
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-md-8 theme-font-size border-end">
+                        <TotalRatingProgressBar
+                          starRating={product.ratingAndReviews.starRatings}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    // create progressbar in this container
+                  </div>
+                </div>
+              </div>
+              <div className="my-3 d-flex gap-1 flex-wrap product-image-container">
+                {product.reviewDetails[0].images.length > 0 &&
+                  product.reviewDetails[0].images.map((item) => {
+                    return (
+                      <div>
+                        <img className="product-review-image" src={item} />
+                      </div>
+                    );
+                  })}
+                <div
+                  onClick={() => setReviewModal(true)}
+                  className="product-review-last-image"
+                >
+                  <img
+                    className="w-100"
+                    src={product.reviewDetails[0].images[0]}
+                  />
+                  <span>+{product.reviewDetails.length}</span>
+                </div>
+                <ReviewImagesModal
+                  show={reviewModal}
+                  onHide={() => setReviewModal(false)}
                 />
               </div>
             </div>

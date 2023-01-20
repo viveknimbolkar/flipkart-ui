@@ -16,7 +16,7 @@ function FrequentlyBoughtTogether({ currentItem, additionalItems }) {
     "hi-IN"
   );
   var inFormatPurchases = Number(currentItem.purchases).toLocaleString("hi-IN");
-  console.log(inFormatPurchases);
+
   var inFormatPrice1 = Number(additionalItems[0].price).toLocaleString("hi-IN");
   var inFormatOriginalPrice1 = Number(
     additionalItems[0].originalPrice
