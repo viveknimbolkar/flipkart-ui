@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 import AppReducer from "./AppReducer";
 
 import laptopImg1 from "../assets/laptop-1.webp";
@@ -8,10 +8,17 @@ import laptopImg4 from "../assets/laptop-4.webp";
 import laptopImg5 from "../assets/laptop-5.webp";
 import laptopImg6 from "../assets/laptop-6.webp";
 import laptopImg7 from "../assets/laptop-7.webp";
+import review1 from "../assets/review-1.webp";
+import review2 from "../assets/review-2.webp";
+import review3 from "../assets/review-3.webp";
+import review4 from "../assets/review-4.webp";
 import laptop from "../assets/hp-laptop.webp";
 import mouse from "../assets/mouse.webp";
 import bag from "../assets/bag.webp";
-
+import pendrive from "../assets/pendrive.webp";
+import webcam from "../assets/webcam.webp";
+import keyboard from "../assets/keyboard.webp";
+import headphone from "../assets/headphone.webp";
 const initialState = {
   address: [
     {
@@ -104,18 +111,10 @@ const initialState = {
         author: "Rama Pandit",
         rating: "3.6",
         longComment:
-          "this is the best laptop with this price segment, Design : 5 Performance: 5 Battery:. 3",
-        shortComment: "Pretty good",
+          "I have used this laptop for one week and my observations are as below.1. It took 90 to 100 min to charge from 10% to 100%. ( 5 times tested)2. Battery backup is approx 190 min to 210 min as per this usage => Full brightness, Hotspot in use, Only slideshow application run. (times tested)",
+        shortComment: "Wonderful",
         date: "Oct, 2022",
-        images: [
-          laptopImg1,
-          laptopImg2,
-          laptopImg3,
-          laptopImg4,
-          laptopImg5,
-          laptopImg6,
-          laptopImg7,
-        ],
+        images: [review1, review2, review3, review4],
       },
     ],
     ratingAndReviews: {
@@ -303,6 +302,32 @@ const initialState = {
       },
     },
   },
+  interedtedProduct: [
+    {
+      link: "/account",
+      image: webcam,
+      heading: "Web Camera",
+      discount: "22",
+    },
+    {
+      link: "/account",
+      image: headphone,
+      heading: "Web Camera",
+      discount: "67",
+    },
+    {
+      link: "/account",
+      image: pendrive,
+      heading: "Web Camera",
+      discount: "21",
+    },
+    {
+      link: "/account",
+      image: keyboard,
+      heading: "Web Camera",
+      discount: "8",
+    },
+  ],
   deliveryInfo: {
     pincode: "444562",
     day: "sunday",
@@ -334,6 +359,88 @@ const initialState = {
       originalPrice: "63539",
       price: "499",
       discount: "21",
+    },
+  ],
+  similarProducts: [
+    {
+      link: "/account",
+      image: laptopImg1,
+      details: "details",
+      rating: "4.6",
+      purchases: "344556",
+      price: "34567",
+      originalPrice: "78900",
+      discount: "22",
+    },
+    {
+      link: "/account",
+      image: laptopImg1,
+      details: "details",
+      rating: "4.6",
+      purchases: "344556",
+      price: "34567",
+      originalPrice: "78900",
+      discount: "22",
+    },
+    {
+      link: "/account",
+      image: laptopImg1,
+      details: "details",
+      rating: "4.6",
+      purchases: "344556",
+      price: "34567",
+      originalPrice: "78900",
+      discount: "22",
+    },
+    {
+      link: "/account",
+      image: laptopImg1,
+      details: "details",
+      rating: "4.6",
+      purchases: "344556",
+      price: "34567",
+      originalPrice: "78900",
+      discount: "22",
+    },
+    {
+      link: "/account",
+      image: laptopImg1,
+      details: "details",
+      rating: "4.6",
+      purchases: "344556",
+      price: "34567",
+      originalPrice: "78900",
+      discount: "22",
+    },
+    {
+      link: "/account",
+      image: laptopImg4,
+      details: "details",
+      rating: "4.6",
+      purchases: "344556",
+      price: "34567",
+      originalPrice: "78900",
+      discount: "22",
+    },
+    {
+      link: "/account",
+      image: laptopImg2,
+      details: "details",
+      rating: "4.6",
+      purchases: "344556",
+      price: "34567",
+      originalPrice: "78900",
+      discount: "22",
+    },
+    {
+      link: "/account",
+      image: laptopImg5,
+      details: "details",
+      rating: "4.6",
+      purchases: "344556",
+      price: "34567",
+      originalPrice: "78900",
+      discount: "22",
     },
   ],
 };
@@ -371,6 +478,8 @@ function GlobalProvider({ children }) {
         product: state.product,
         deliveryInfo: state.deliveryInfo,
         frequentlyBoughtTogether: state.frequentlyBoughtTogether,
+        interedtedProduct: state.interedtedProduct,
+        similarProducts: state.similarProducts,
         addNewAddress,
         removeAddress,
       }}

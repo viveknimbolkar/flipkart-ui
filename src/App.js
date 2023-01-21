@@ -10,7 +10,6 @@ import Supercoin from "./account/Supercoin";
 import Wishlist from "./account/Wishlist";
 import GiftCard from "./account/GiftCard";
 import Notifications from "./account/Notifications";
-import Pancard from "./account/Pancard";
 import Address from "./account/Address";
 import GlobalProvider from "./context/GlobalState";
 import SavedUPI from "./account/SavedUPI";

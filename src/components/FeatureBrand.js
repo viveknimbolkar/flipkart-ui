@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../css/feature-brand.css";
 import { faGreaterThan, faLessThan } from "@fortawesome/free-solid-svg-icons";
 
-function FeatureBrand({ cards }) {
+function FeatureBrand({ images }) {
   const featureBrandContainerRef = useRef(null);
   const handleRightScroll = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ function FeatureBrand({ cards }) {
             className="flipkart-feature-brand-container d-flex"
             id="feature-brand"
           >
-            {cards.map((item) => {
+            {images.map((item) => {
               return (
                 <div className="flipkart-feature-brand-image-container card">
                   <a href="$">

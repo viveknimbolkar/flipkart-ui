@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import { GlobalContext } from "../context/GlobalState";
 import "../css/global.css";
 import userImg from "../assets/logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Notification() {
   const { notification } = useContext(GlobalContext);
   const navigate = useNavigate();

@@ -5,14 +5,18 @@ import Slider from "../components/Slider";
 import sliderImg1 from "../assets/slider-img-1.webp";
 import sliderImg2 from "../assets/slider-img-2.webp";
 import sliderImg3 from "../assets/slider-img-3.webp";
+import FeatureBrand from "../components/FeatureBrand";
+import { GlobalContext } from "../context/GlobalState";
 function Home() {
-  
+  const { product } = useContext(GlobalContext);
   const imagesOfSlider = [sliderImg1, sliderImg2, sliderImg3];
 
   return (
     <>
       <Header />
       <Slider images={imagesOfSlider} />
+      <FeatureBrand images={product.images} />
+
       <Footer />
     </>
   );

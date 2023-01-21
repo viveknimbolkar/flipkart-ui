@@ -49,10 +49,10 @@ function FrequentlyBoughtTogether({ currentItem, additionalItems }) {
       <div>
         <h3>Frequently Bought Together</h3>
       </div>
-      <div className="d-flex align-items-center">
+      <div className="d-flex my-2 align-items-center">
         <Link
           to={additionalItems[0].link}
-          className="text-decoration-none border text-dark theme-font-size"
+          className="text-decoration-none text-dark theme-font-size"
         >
           <div class="card">
             <div className=" d-flex justify-content-center">

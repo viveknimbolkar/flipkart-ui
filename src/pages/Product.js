@@ -19,10 +19,14 @@ import {
   faPlus,
   faLocationDot,
   faEquals,
+  faBolt,
 } from "@fortawesome/free-solid-svg-icons";
 import SellerRatingPill from "../components/SellerRatingPill";
 import FrequentlyBoughtTogether from "../components/FrequentlyBoughtTogether";
 import TotalRatingProgressBar from "../components/TotalRatingProgressBar";
+import SimpleProductCard from "../components/SimpleProductCard";
+import CommonSlider from "../components/CommonSlider";
+import CommonProductCard from "../components/CommonProductCard";
 
 function DeliveryDetails(props) {
   return (
@@ -83,8 +87,13 @@ function DeliveryDetails(props) {
 }
 
 function Product() {
-  const { product, deliveryInfo, frequentlyBoughtTogether } =
-    useContext(GlobalContext);
+  const {
+    product,
+    deliveryInfo,
+    similarProducts,
+    interedtedProduct,
+    frequentlyBoughtTogether,
+  } = useContext(GlobalContext);
   const [activeImg, setActiveImg] = useState(0);
   const [modal, setModal] = useState(false);
   const [reviewModal, setReviewModal] = useState(false);
@@ -731,21 +740,54 @@ function Product() {
       <div className="container-fluid bg-white">
         <div className="row my-3">
           <div className="col-md-5 d-flex border">
-            <div class="d-flex flex-column mb-3 border product-img-tab-container">
+            <div class="d-flex flex-column product-img-tab-container">
               {product.images.map((image, i) => {
                 return (
-                  <div class="p-2" onMouseOver={() => setActiveImg(i)}>
+                  <div
+                    class="p-2 border-bottom"
+                    onMouseOver={() => setActiveImg(i)}
+                  >
                     <img src={image} className="img-fluid" />
                   </div>
                 );
               })}
             </div>
-            <div className="col-auto product-img">
-              <img src={product.images[activeImg]} alt="product image" />
+            <div className="d-flex flex-column">
+              <div className="col-auto product-img">
+                <img src={product.images[activeImg]} alt="product image" />
+              </div>
+              <div className="d-flex gap-2 my-2">
+                <button
+                  style={{
+                    borderRadius: 0,
+                    width: 200,
+                    fontSize: 16,
+                    height: 50,
+                  }}
+                  className="btn fw-bold btn-lg bg-warning text-white text-uppercase "
+                >
+                  <FontAwesomeIcon icon={faShoppingCart} className="mx-2" />
+                  add to cart
+                </button>
+
+                <button
+                  style={{
+                    borderRadius: 0,
+                    width: 200,
+                    backgroundColor: "#fb641b",
+                    fontSize: 16,
+                    height: 50,
+                  }}
+                  className="btn fw-bold btn-lg buy-now text-white text-uppercase "
+                >
+                  <FontAwesomeIcon icon={faBolt} className="mx-2" />
+                  Buy Now
+                </button>
+              </div>
             </div>
           </div>
           <div className="col-md-7">
-            <div className="col-auto">
+            <div className="col-auto p-2">
               <h5 className="fw-normal">{product.details}</h5>
               <div className="d-flex gap-3 align-items-center">
                 <RatingPill rating={4.3} />
@@ -1152,10 +1194,55 @@ function Product() {
                   onHide={() => setReviewModal(false)}
                 />
               </div>
+              <div className="d-flex my-4 flex-column review-section">
+                {product.reviewDetails.length > 0 &&
+                  product.reviewDetails.map((review, i) => {
+                    return (
+                      <div className="border-bottom p-2">
+                        <div className="d-flex gap-2 my-2">
+                          <RatingPill rating={review.rating} />
+                          <span>
+                            <strong>{review.shortComment}</strong>
+                          </span>
+                        </div>
+                        <div>
+                          <p>{review.longComment}</p>
+                        </div>
+                        <div className="d-flex flex-wrap gap-1">
+                          {review.images.map((image) => {
+                            return (
+                              <div>
+                                <img src={image} />
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div className="bg-white my-4">
+        <h2 className="px-4 py-1">You might be interested in</h2>
+        <CommonSlider>
+          <SimpleProductCard details={interedtedProduct[0]} />
+          <SimpleProductCard details={interedtedProduct[1]} />
+          <SimpleProductCard details={interedtedProduct[2]} />
+          <SimpleProductCard details={interedtedProduct[3]} />
+        </CommonSlider>
+      </div>
+      <div className="bg-white my-4">
+        <h2 className="px-4 py-1">Similar products</h2>
+        <CommonSlider>
+          {similarProducts.map((item) => {
+            return <CommonProductCard details={item} />;
+          })}
+        </CommonSlider>
+      </div>
+
       <Footer />
     </div>
   );
