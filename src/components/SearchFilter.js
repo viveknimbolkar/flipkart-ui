@@ -56,6 +56,7 @@ function SearchFilter() {
         {defaultSearchFilters.map((item, i) => {
           return (
             <Link
+            key={`filter-list-${i}`}
               to={"/"}
               className="text-decoration-none text-dark fw-semibold"
             >

@@ -112,7 +112,10 @@ function Header() {
               <ul className="dropdown-menu ">
                 {userDropdown.map((item, i) => {
                   return (
-                    <li className="d-flex align-items-center  border-bottom dropdown-item">
+                    <li
+                      key={`list-${i}`}
+                      className="d-flex align-items-center  border-bottom dropdown-item"
+                    >
                       <FontAwesomeIcon icon={item.icon} />
 
                       <Link className="dropdown-item" to={item.path}>

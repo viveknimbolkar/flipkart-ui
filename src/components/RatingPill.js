@@ -6,9 +6,9 @@ function RatingPill({rating}) {
     <div
       className={`bg-${
         Number(rating) < 3 ? "danger" : "success"
-      } text-white product-rating px-1`}
+      } text-white product-rating d-flex rounded align-items-center px-1 gap-1`}
     >
-      {rating} <FontAwesomeIcon icon={faStar} />
+      {rating} <FontAwesomeIcon size="xs" icon={faStar} />
     </div>
   );
 }

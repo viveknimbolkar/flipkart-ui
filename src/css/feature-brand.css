@@ -1,9 +1,6 @@
-.flipkart-feature-brand-container{
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: 320px;
-}
-.flipkart-feature-brand-image-container img{
-    width: 300px;
+.flipkart-feature-brand-container img{
+    width: 350px;
+    height: 200px;
+    object-fit: contain;
     
 }

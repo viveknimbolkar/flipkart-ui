@@ -1,47 +1,43 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import flipkartAssuredIcon from "../assets/flipkart-assured.png";
 import { faStar, faIndianRupee } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
-import { Link } from "react-router-dom";
 import userImg from "../assets/user.svg";
 import "../css/product-card.css";
+import RatingPill from "./RatingPill.js";
 function ProductCard({ productDetails }) {
-  
-  var inFormatPrice = productDetails.price.toLocaleString("hi-IN");
-  var inFormatOriginalPrice =
-    productDetails.originalPrice.toLocaleString("hi-IN");
-  var inFormatPurchases = productDetails.purchases.toLocaleString("hi-IN");
+  console.log(productDetails);
+  const inFormatPrice = Number(productDetails.price).toLocaleString("hi-IN");
+
+  const inFormatOriginalPrice = Number(
+    productDetails.originalPrice
+  ).toLocaleString("hi-IN");
+
+  const inFormatPurchases = Number(productDetails.purchases).toLocaleString(
+    "hi-IN"
+  );
+
   return (
     <Link
       to={productDetails.link}
       className="text-decoration-none text-dark theme-font-size"
     >
       <div style={{ border: "none" }} class="card product-boxshadow">
-        <img src={userImg} class="card-img-top p-2" alt="product image" />
-        <div class="card-body lh-lg">
+        <div  className="product-card-top-image-container d-flex justify-content-center">
+          <img src={productDetails.imgLink} style={{width:150,height:150,objectFit:'contain'}} class=" p-2" alt="product image" />
+        </div>
+        <div class="card-body">
           <div class="card-text product-details">{productDetails.details}</div>
           <div className="text-secondary">
             Quantity {productDetails.quantity}
           </div>
-          <div className="d-flex">
-            <div class="dropdown">
-              <ProductCard rating={productDetails.rating} />
-              <div
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                className={`bg-${
-                  Number(productDetails.rating) < 3 ? "danger" : "success"
-                } text-white product-rating`}
-              >
-                {productDetails.rating} <FontAwesomeIcon icon={faStar} />
-              </div>
-
-              <div class="dropdown-menu">googel</div>
-            </div>
-            <p className="mx-2 text-secondary">({inFormatPurchases})</p>
-            <div>
+          <div className="d-flex align-items-center">
+            <RatingPill rating={productDetails.rating} />
+            <span className="mx-2 text-secondary">({inFormatPurchases})</span>
+            <div className="assured-image">
               {productDetails.flipkartAssured && (
-                <img src={flipkartAssuredIcon} width={90} />
+                <img style={{width:80,height:50}} src={flipkartAssuredIcon}  />
               )}
             </div>
           </div>

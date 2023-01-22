@@ -443,6 +443,36 @@ const initialState = {
       discount: "22",
     },
   ],
+
+  // array of search result
+  searchResult: [
+    {
+      details: "one details",
+      quantity: "45ml",
+      rating: "4.7",
+      price: "5689",
+      originalPrice: "7342",
+      discount: "34",
+      deliveryCharges: "free delivery",
+      link: "/account",
+      imgLink: laptopImg2,
+      flipkartAssured: true,
+      purchases: "52",
+    },
+    {
+      details: "two details",
+      quantity: "45ml",
+      rating: "4.7",
+      price: "3672",
+      originalPrice: "7342",
+      discount: "34",
+      deliveryCharges: "free delivery",
+      link: "/account",
+      imgLink: laptopImg1,
+      flipkartAssured: true,
+      purchases: "122334",
+    },
+  ],
 };
 
 // create context
@@ -480,6 +510,7 @@ function GlobalProvider({ children }) {
         frequentlyBoughtTogether: state.frequentlyBoughtTogether,
         interedtedProduct: state.interedtedProduct,
         similarProducts: state.similarProducts,
+        searchResult: state.searchResult,
         addNewAddress,
         removeAddress,
       }}
