@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo.png";
+import "../css/header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBagShopping,
@@ -14,8 +15,11 @@ import {
   faUser,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
+import shoppingVector from "../assets/shopping.png";
 import { Link } from "react-router-dom";
+import { Modal } from "react-bootstrap";
 function Header() {
+  const [authModal, setAuthModal] = useState(false);
   const userDropdown = [
     {
       label: "My Profile",
@@ -63,6 +67,42 @@ function Header() {
       path: "/account/logout",
     },
   ];
+
+  function AuthModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <div className="row d-flex auth-container">
+          <div className="col-md-5 p-4 text-white bg-primary">
+            <h1>Login</h1>
+            <p>Get access to your Orders, Wishlist and Recommendations</p>
+            <img width={300} src={shoppingVector} />
+          </div>
+          <div className="col-md-7 p-4 ">
+            <input
+              className="w-100 my-4"
+              placeholder="Enter your email..."
+              type="text"
+            />
+            <p>
+              By continuing, you agree to Flipkart's Terms of Use and Privacy
+              Policy.
+            </p>
+            <button className=" otp-btn my-4 text-white  w-100">
+              Request OTP
+            </button>
+            <p style={{ cursor: "pointer" }} className="text-primary">
+              New to Flipkart? Create an account
+            </p>
+          </div>
+        </div>
+      </Modal>
+    );
+  }
   return (
     <nav
       style={{ position: "fit" }}
@@ -98,6 +138,15 @@ function Header() {
                   </button>
                 </Link>
               </div>
+            </li>
+            <li className="nav-item fw-bold">
+              <button
+                onClick={() => setAuthModal(true)}
+                className="btn bg-white text-primary fw-bold login-btn"
+              >
+                Login
+              </button>
+              <AuthModal show={authModal} onHide={() => setAuthModal(false)} />
             </li>
             <li className="nav-item dropdown fw-bold">
               <a
