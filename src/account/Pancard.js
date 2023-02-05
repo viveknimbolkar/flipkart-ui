@@ -1,8 +1,9 @@
-import React from "react";
+import React,{useEffect} from "react";
 import AccountSideMenu from "../components/AccountSideMenu";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 function Pancard() {
+ 
   return (
     <>
       <Header />

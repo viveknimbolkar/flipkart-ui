@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AccountSideMenu from "../components/AccountSideMenu";
 import Footer from "../components/Footer";
 import sectionEndImg from "../assets/section-end.png";
 import Header from "../components/Header";
-
 function Account() {
+
   return (
     <>
       <Header />
@@ -124,7 +124,11 @@ function Account() {
                 </p>
               </div>
             </div>
-            <img src={sectionEndImg} className='flipkart-section-end-img' alt='section end image' />
+            <img
+              src={sectionEndImg}
+              className="flipkart-section-end-img"
+              alt="section end image"
+            />
           </div>
         </div>
       </div>

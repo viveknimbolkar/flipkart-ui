@@ -20,6 +20,7 @@ import webcam from "../assets/webcam.webp";
 import keyboard from "../assets/keyboard.webp";
 import headphone from "../assets/headphone.webp";
 const initialState = {
+  isUserLoggedIn: false,
   address: [
     {
       id: 1,
@@ -501,6 +502,7 @@ function GlobalProvider({ children }) {
   return (
     <GlobalContext.Provider
       value={{
+        isUserLoggedIn: state.isUserLoggedIn,
         address: state.address,
         notification: state.notification,
         orderFilters: state.orderFilters,

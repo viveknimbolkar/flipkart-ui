@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AccountSideMenu from "../components/AccountSideMenu";
 import Footer from "../components/Footer";
 import Header from "../components/Header";

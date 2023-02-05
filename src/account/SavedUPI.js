@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AccountSideMenu from "../components/AccountSideMenu";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -18,7 +18,7 @@ function SavedUPI() {
                 <h4>No VPAs saved to be shown</h4>
               </div>
               <div>
-                <p style={{fontSize:14}}>
+                <p style={{ fontSize: 14 }}>
                   <strong>FAQs </strong> <br />
                   <strong>Why is my UPI being saved on Flipkart?</strong>
                   <br /> It's quicker. You can save the hassle of typing in the
@@ -26,18 +26,21 @@ function SavedUPI() {
                   saving your UPI details. You can make your payment by
                   selecting the saved UPI ID of your choice at checkout. While
                   this is obviously faster, it is also very secure.
-                  <br /><br />
+                  <br />
+                  <br />
                   <strong>Is it safe to save my UPI on Flipkart?</strong>
                   <br />
                   Absolutely. Your UPI ID information is 100 percent safe with
                   us. UPI ID details are non PCI compliant and are non
                   confidential data.
-                  <br /><br />
+                  <br />
+                  <br />
                   <strong>What all UPI information does Flipkart store?</strong>
                   <br />
                   Flipkart only stores UPI ID and payment provider details. We
                   do not store UPI PIN/MPIN.
-                  <br /><br />
+                  <br />
+                  <br />
                   <strong>Can I delete my saved UPI?</strong>
                   <br /> Yes, you can delete your UPI ID at any given time.
                 </p>

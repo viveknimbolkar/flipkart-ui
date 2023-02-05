@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
 import AccountSideMenu from "../components/AccountSideMenu";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "../css/global.css";
-
+import { useNavigate } from "react-router-dom";
 function Coupons() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const isUserLoggedIn = localStorage.getItem("token");
+    if (!isUserLoggedIn) {
+      navigate("/");
+    }
+  }, []);
   const availableCoupons = [
     {
       name: "Extra 5% Off select product",

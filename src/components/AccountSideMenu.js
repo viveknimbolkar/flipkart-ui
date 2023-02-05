@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import userLogo from "../assets/user.svg";
-import React from "react";
+import React,{useEffect} from "react";
 import "../css/account-side-menu.css";
 import { Link } from "react-router-dom";
 function AccountSideMenu() {
