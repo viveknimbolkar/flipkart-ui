@@ -16,6 +16,7 @@ import SavedUPI from "./account/SavedUPI";
 import Search from "./pages/Search";
 import Product from "./pages/Product";
 import APIProvider from "./context/api";
+import Cart from "./account/Cart";
 import LoginRequired from "./components/LoginRequired";
 function App() {
   return (
@@ -78,6 +79,14 @@ function App() {
               <LoginRequired>
                 <PlusZone />
               </LoginRequired>
+            }
+          />
+          <Route
+            path="/account/cart"
+            element={
+              // <LoginRequired>
+                <Cart />
+              // </LoginRequired>
             }
           />
           <Route

@@ -256,7 +256,7 @@ function Header() {
                             navigate("/");
                           }
                         }}
-                        key={`list-${i*2}`}
+                        key={`list-${i * 2}`}
                         className="d-flex align-items-center  border-bottom dropdown-item"
                       >
                         <FontAwesomeIcon icon={item.icon} />
@@ -285,10 +285,13 @@ function Header() {
             )}
 
             <li className="nav-item fw-bold">
-              {/* <Link to={'/cart'}> */}
-              <FontAwesomeIcon icon={faShoppingCart} />
-              Cart
-              {/* </Link> */}
+              <Link
+                className="text-white text-decoration-none"
+                to={"account/cart"}
+              >
+                <FontAwesomeIcon icon={faShoppingCart} />
+                Cart
+              </Link>
             </li>
             <li className="nav-item fw-bold">
               <a className="nav-link text-light" href="#">
