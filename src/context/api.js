@@ -6,6 +6,34 @@ export const APIContext = createContext();
 function APIProvider({ children }) {
   const BASE_URL = process.env.REACT_APP_BASE_API_URL;
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
+  const getCustomerName = (email) => {
+    const endpoint = "get_customer_name";
+    axios
+      .get(BASE_URL + endpoint, { email })
+      .then((res) => {
+        console.log("this is get nan4 ", res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const updateCustomerName = (name, email) => {
+    const endpoint = "update_customer_name";
+    axios
+      .post(
+        BASE_URL + endpoint,
+        { name, email },
+        { headers: { Authorization: token } }
+      )
+      .then((res) => console.log("this is res ", res))
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const loginUser = (email, password) => {
     const endpoint = "login";
     axios
@@ -33,7 +61,12 @@ function APIProvider({ children }) {
 
   return (
     <APIContext.Provider
-      value={{ loginUser: loginUser, registerUser: registerUser }}
+      value={{
+        loginUser: loginUser,
+        registerUser: registerUser,
+        updateCustomerName: updateCustomerName,
+        getCustomerName: getCustomerName,
+      }}
     >
       {children}
     </APIContext.Provider>

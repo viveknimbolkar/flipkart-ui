@@ -1,9 +1,40 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AccountSideMenu from "../components/AccountSideMenu";
 import Footer from "../components/Footer";
 import sectionEndImg from "../assets/section-end.png";
 import Header from "../components/Header";
+import { APIContext } from "../context/api";
+import jwtDecode from "jwt-decode";
+import axios from "axios";
 function Account() {
+  const [name, setName] = useState("");
+
+  const token = localStorage.getItem("token");
+  const { updateCustomerName, getCustomerName } = useContext(APIContext);
+  useEffect(() => {
+    const endpoint = "get_customer_name";
+    axios
+      .post(
+        process.env.REACT_APP_BASE_API_URL + endpoint,
+        {},
+        { headers: { Authorization: token } }
+      )
+      .then((res) => {
+        setName(res.data.name);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+  const saveName = () => {
+    updateCustomerName(name, token.email);
+  };
+
+  const handleCustomerNameEdit = () => {
+    // const customerName = getCustomerName(token.email);
+    // console.log("customer name", customerName);
+    // setName(customerName);
+  };
 
   return (
     <>
@@ -18,26 +49,25 @@ function Account() {
             <div class="row p-3 ">
               <div className="d-flex">
                 <h4>Personal Information </h4>
-                <a className="text-primary text-decoration-none mx-4 mt-1">
+                {/* <a
+                  onClick={handleCustomerNameEdit}
+                  className="text-primary text-decoration-none mx-4 mt-1"
+                >
                   Edit
-                </a>
+                </a> */}
               </div>
               <div class="col-auto  my-3">
                 <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   type="text"
                   class="form-control"
-                  placeholder="Firstname..."
+                  placeholder="Name..."
                 />
               </div>
+
               <div class="col-auto my-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Lastname..."
-                />
-              </div>
-              <div class="col-auto my-3">
-                <button type="submit" class="btn btn-primary mb-3">
+                <button onClick={saveName} class="btn btn-primary mb-3">
                   Save
                 </button>
               </div>
