@@ -8,17 +8,22 @@ function APIProvider({ children }) {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  const getCustomerName = (email) => {
-    const endpoint = "get_customer_name";
-    axios
-      .get(BASE_URL + endpoint, { email })
-      .then((res) => {
-        console.log("this is get nan4 ", res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  async function getCustomerName() {
+    const endpoint = 'get_customer_name'
+    return new Promise((resolve, reject) => {
+      axios
+        .post(BASE_URL + endpoint, {}, { headers: { Authorization: token } })
+        .then((res) => {
+          console.log("this is get nan4 ", res);
+          resolve(res);
+        })
+        .catch((error) => {
+          console.log(error);
+          reject(error);
+        });
+    });
+  }
+
 
   const updateCustomerName = (name, email) => {
     const endpoint = "update_customer_name";

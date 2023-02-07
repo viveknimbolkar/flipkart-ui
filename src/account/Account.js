@@ -3,31 +3,23 @@ import AccountSideMenu from "../components/AccountSideMenu";
 import Footer from "../components/Footer";
 import sectionEndImg from "../assets/section-end.png";
 import Header from "../components/Header";
-import { APIContext } from "../context/api";
 import jwtDecode from "jwt-decode";
-import axios from "axios";
+import { APIContext } from "../context/api";
 function Account() {
   const [name, setName] = useState("");
 
   const token = localStorage.getItem("token");
+  const email = jwtDecode(token).email;
   const { updateCustomerName, getCustomerName } = useContext(APIContext);
   useEffect(() => {
-    const endpoint = "get_customer_name";
-    axios
-      .post(
-        process.env.REACT_APP_BASE_API_URL + endpoint,
-        {},
-        { headers: { Authorization: token } }
-      )
+    getCustomerName(email)
       .then((res) => {
         setName(res.data.name);
       })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+      .catch((err) => console.log(err));
+  }, []);
   const saveName = () => {
-    updateCustomerName(name, token.email);
+    updateCustomerName(name, email);
   };
 
   const handleCustomerNameEdit = () => {
